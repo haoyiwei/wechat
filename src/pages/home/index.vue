@@ -1,11 +1,7 @@
 <template>
   <div>
-    <div class="search">
-      <div class="search-bar">
-        <icon type="search"></icon>
-        <span>搜索</span>
-      </div>
-    </div>
+    <!-- 搜索条 -->
+    <search-bar></search-bar>
     <swiper
       indicator-dots="true"
       indicator-active-color="#ffffff"
@@ -77,6 +73,7 @@
 
 <script>
 import aaa from '@/utils/com'
+import searchBar from '../../components/searchBar'
 export default {
   created() {
     this.isdata()
@@ -116,77 +113,13 @@ export default {
   // 下拉刷新
   onPullDownRefresh() {
     this.isdata()
+  },
+  components: {
+    'search-bar': searchBar
   }
 }
 </script>
 
-<style  scoped>
-.search {
-  padding: 10px;
-  background-color: #eb4450;
-}
-.search-bar {
-  width: 100%;
-  text-align: center;
-  background-color: #fff;
-}
-.search-bar icon {
-  vertical-align: middle;
-}
-.slide-image {
-  width: 100%;
-}
-.menu {
-  display: flex;
-  justify-content: space-around;
-}
-.menu-item img {
-  width: 128rpx;
-  height: 140rpx;
-}
-.floor-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 20rpx;
-  box-sizing: border-box;
-}
-.floor-title {
-  width: 100%;
-}
-.floor-title img {
-  width: 100%;
-  height: 60rpx;
-  display: block;
-}
-.left img {
-  width: 232rpx;
-  height: 385rpx;
-  border-radius: 4px;
-}
-.right {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-left: 14rpx;
-}
-.right img {
-  width: 232rpx;
-  height: 188rpx;
-  border-radius: 4px;
-}
-.totop {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<style scoped lang='scss'>
+  @import 'main.scss'
 </style>
